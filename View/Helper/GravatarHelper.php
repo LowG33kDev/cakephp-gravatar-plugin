@@ -16,7 +16,7 @@ class GravatarHelper extends AppHelper{
 		'default'=>'mm',
 		'forcedefault'=>false,
 		'rating'=>'g',
-		'image-options'=>array('class'=>'gravatar')
+		'image-options'=>array()
 		);
 
 	/**
@@ -34,7 +34,7 @@ class GravatarHelper extends AppHelper{
 	/**
 	 * 
 	 */
-	public function gravatar($email,$options=array()){
+	public function generate($email,$options=array()){
 		if(isset($options['image-options'])){
 			$options['image-options'] = array_merge($this->_settings['image-options'],$options['image-options']);
 		}
