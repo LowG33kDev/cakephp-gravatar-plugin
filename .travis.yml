@@ -5,8 +5,9 @@ php:
   - 5.4
  
 before_script:
+  - composer self-update
   - git clone --depth 1 git://github.com/cakephp/cakephp ../cakephp && cd ../cakephp
-  - mv ../cakephp-gravatar-plugin Plugin/Gravatar
+  - mv ../cakephp-gravatar-plugin app/Plugin/Gravatar
   - sh -c "mysql -e 'CREATE DATABASE cakephp_test;'"
   - chmod -R 777 app/tmp
   - echo "<?php
