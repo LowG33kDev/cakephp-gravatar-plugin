@@ -1,28 +1,33 @@
 <?php
 
+namespace Gravatar\View\Helper;
+
+use Cake\View\View;
+use Cake\View\Helper;
+
 /**
  * 
  */
-class GravatarHelper extends AppHelper{
+class GravatarHelper extends Helper{
 
 	// Load core Html helper
-	public $helpers = array('Html');
+	public $helpers = ['Html'];
 
 	// Default settings for the helper
-	private $_settings = array(
+	private $_settings = [
 		'secure'=>false,
 		'extension'=>'',
 		'size'=>'80',
 		'default'=>'mm',
 		'forcedefault'=>false,
 		'rating'=>'g',
-		'image-options'=>array()
-		);
+		'image-options'=>[]
+		];
 
 	/**
 	 * GravatarHelper constructor. Used to merge default settings and user's settings.
 	 */
-	public function __construct(View $view, $settings=array()){
+	public function __construct(View $view, $settings=[]){
 		parent::__construct($view,$settings);
 		if(isset($settings['image-options'])){
 			$settings['image-options'] = array_merge($settings['image-options'],$this->_settings['image-options']);

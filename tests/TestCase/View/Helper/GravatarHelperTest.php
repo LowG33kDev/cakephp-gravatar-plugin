@@ -1,15 +1,16 @@
 <?php
 
-App::uses('Controller', 'Controller');
-App::uses('View', 'View');
-App::uses('GravatarHelper', 'Gravatar.View/Helper');
+namespace Gravatar\Test\TestCase\View\Helper;
 
-class GravatarHelperTest extends CakeTestCase {
+use Gravatar\View\Helper\GravatarHelper;
+use Cake\TestSuite\TestCase;
+use Cake\View\View;
+
+class GravatarHelperTest extends TestCase {
     
     public function setUp() {
 		parent::setUp();
-	    $Controller = new Controller();
-	    $View = new View($Controller);
+	    $View = new View();
 	    $this->Gravatar = new GravatarHelper($View);
     }
 
@@ -25,8 +26,7 @@ class GravatarHelperTest extends CakeTestCase {
     }
 
     public function testInitialValues(){
-    	$Controller = new Controller();
-	    $View = new View($Controller);
+	    $View = new View();
 	    $this->Gravatar = new GravatarHelper($View, array(
 	    	'secure'=>true,
 			'extension'=>'.jpg',
@@ -80,8 +80,7 @@ class GravatarHelperTest extends CakeTestCase {
     }
 
     public function testWithOverideOptions(){
-    	$Controller = new Controller();
-	    $View = new View($Controller);
+	    $View = new View();
 	    $this->Gravatar = new GravatarHelper($View, array(
 	    	'secure'=>true,
 			'extension'=>'.jpg',
