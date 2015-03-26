@@ -1,0 +1,38 @@
+{
+	"name": "LowG33kDev/cakephp-gravatar-plugin",
+	"description": "CakePHP Gravatar plugin",
+	"version": "1.1.0",
+	"type": "cakephp-plugin",
+	"keywords": ["cakephp", "gravatar"],
+	"homepage": "https://github.com/LowG33kDev/cakephp-gravatar-plugin",
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "Loïc Marchand",
+			"homepage": "https://github.com/LowG33kDev",
+			"role": "Author"
+		}
+	],
+	"support": {
+		"issues": "https://github.com/LowG33kDev/cakephp-gravatar-plugin/issues",
+		"source": "https://github.com/LowG33kDev/cakephp-gravatar-plugin"
+	},
+	"require": {
+		"cakephp/cakephp": "~3.0"
+	},
+	"require-dev": {
+		"cakephp/cakephp-codesniffer": "dev-master",
+		"phpunit/phpunit": "4.1.*"
+	},
+	"autoload": {
+		"psr-4": {
+			"Gravatar\\": "src"
+		}
+	},
+	"autoload-dev": {
+		"psr-4": {
+			"Cake\\Test\\": "vendor/cakephp/cakephp/tests",
+			"Gravatar\\Test\\": "tests"
+		}
+	}
+}
