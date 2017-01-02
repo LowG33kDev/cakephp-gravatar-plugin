@@ -106,4 +106,12 @@ class GravatarHelperTest extends TestCase {
     	$this->assertContains('r=x', $result); // Check rating
     	$this->assertContains('OverloadClass', $result); // Check image options
     }
+    
+    public function testHash(){
+        $result = $this->Gravatar->generate('test@example.com');
+    	$this->assertContains('55502f40dc8b7c769880b10874abc9d0', $result); // Check for hash
+    	
+        $result = $this->Gravatar->generate('55502f40dc8b7c769880b10874abc9d0');
+    	$this->assertContains('55502f40dc8b7c769880b10874abc9d0', $result); // Check for hash
+    }
 }
