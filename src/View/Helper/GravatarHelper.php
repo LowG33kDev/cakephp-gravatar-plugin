@@ -46,8 +46,12 @@ class GravatarHelper extends Helper{
 		$options = array_merge($this->_settings,$options);
 		$options = $this->checkSettings($options);
 
-		// init url
-		$url = 'http://www.gravatar.com/avatar/'.md5($email);
+        // Checking if email should be hashed or not with the presence of an @ symbol
+        if(strpos($email, '@') === false){
+            $url = 'http://www.gravatar.com/avatar/'.$email;
+        }else{
+            $url = 'http://www.gravatar.com/avatar/'.md5($email);
+        }
 		if($options['secure']===true){
 			$url = str_replace('http', 'https', $url);
 		}
